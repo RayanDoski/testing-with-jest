@@ -34,3 +34,20 @@ describe('Clicking "Pusha till stacken"', () => {
         await alert.accept();
     });
 });
+
+describe('Clicking "Poppa stacken!"', () => {
+    it('should show the popped element', async () => {
+        // First push an element
+        let push = await driver.findElement(By.id('push'));
+        await push.click();
+        let alert = await driver.switchTo().alert();
+        await alert.sendKeys("TestElement");
+        await alert.accept();
+        
+        // Then test pop
+        let pop = await driver.findElement(By.id('pop'));
+        await pop.click();
+        let alertText = await driver.switchTo().alert().getText();
+        expect(alertText).toContain("TestElement");
+    });
+});
