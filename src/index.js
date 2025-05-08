@@ -9,7 +9,8 @@ window.onload = function () {
     var display = document.getElementById('top_of_stack');
 
     pop.addEventListener("click", function() {
-        var text = "Tog bort " + stack.pop();
+        var poppedValue = stack.pop();
+        var text = poppedValue !== undefined ? "Tog bort " + poppedValue : "Stacken är tom";
         alert(text);
     });
 

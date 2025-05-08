@@ -8,10 +8,12 @@ exports.push = function (x) {
 };
 
 // Returnerar det översta elementet i stacken och tar bort det
-exports.pop = function() {
-    if (stack.length === 0) return undefined;
+exports.pop = function () {
+    if (stack.length === 0) {
+        return undefined;
+    }
     return stack.pop();
-};
+}
 
 // Returnerar det översta elementet i stacken
 exports.peek = function () {
